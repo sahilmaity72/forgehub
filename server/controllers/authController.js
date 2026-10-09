@@ -111,3 +111,14 @@ export const login = async (req, res) => {
   }
 };
 
+export const getMe = async (req, res) => {
+  return res.status(200).json({
+    _id: req.user._id,
+    name: req.user.name,
+    email: req.user.email,
+    role: req.user.role,
+    createdAt: req.user.createdAt,
+    updatedAt: req.user.updatedAt,
+  });
+};
+
